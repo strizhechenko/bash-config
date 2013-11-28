@@ -1,0 +1,27 @@
+#!/bin/bash
+
+declare -A app
+app['name']='Some Very Cool App'
+app['appname']='someapp'
+
+declare -A appupdate
+appupdate['widget']='menu "Обновление app" "Настройки обновления app."'
+appupdate['update.widget']='cmd "Обновить app" "/usr/local/app/bin/autoupdate.sh; exit 0;" "Будет установлена новая версия app с сохранением настроек."'
+appupdate['update']=''
+appupdate['autoupdate.widget']='checkbox "Скачивать все обновления" "Включить проверку новых версий раз в день"'
+appupdate['autoupdate']='1'
+appupdate['autoupdate_critical.widget']='checkbox "Скачивать критические обновления" "Включить проверку новых версий с критическими обновлениями раз в день"'
+appupdate['autoupdate_critical']='1'
+
+declare -A diagnostic
+diagnostic['widget']='menu "Прочие настройки" ""'
+diagnostic['enabled.widget']='checkbox "Включить диагностику раз в час" "Отчёт будет отсылаться по email"'
+diagnostic['enabled']='1'
+diagnostic['diagnosticfix.widget']='checkbox "Исправлять найденные диагностикой ошибки" "Экспериментальная опция, но помогает в 30% случаев"'
+diagnostic['diagnosticfix']='1'
+diagnostic['diagnostic2support.widget']='checkbox "Слать отчёт об ошибках разработчикам" ""'
+diagnostic['diagnostic2support']='1'
+diagnostic['diagnostic2admin.widget']='checkbox "Слать отчёт об ошибках администратору" ""'
+diagnostic['diagnostic2admin']='1'
+diagnostic['diagnostic_email']=''
+diagnostic['diagnostic_email.widget']='inputbox "Email поддержки" ""'
